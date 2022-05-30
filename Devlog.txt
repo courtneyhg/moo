@@ -58,14 +58,13 @@ Bri :: And... we done with propro.pdf.
 
 2022-05-27
 --------------------------------------------------------------
-Fang :: started UML diagram and made the screen way too big
-Courtney :: fixed the screen and continued UML diagram
-Bri :: also continued UML diagram and ran to get an extra propro
+Fang :: Started UML diagram and made the screen way too big
+Courtney :: Fixed the screen and continued UML diagram
+Bri :: Also continued UML diagram and ran to get an extra propro
 ==============================================================
 
-Date
+2022-05-30
 --------------------------------------------------------------
-Fang ::
-Courtney ::
-Bri ::
+Fang :: Completed, transcribed, and uploaded our basic UML diagrams
+Bri :: Updated .gitignore
 ==============================================================
