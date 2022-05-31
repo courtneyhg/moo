@@ -69,3 +69,10 @@ Fang :: Completed, transcribed, and uploaded our basic UML diagrams
 Bri :: Updated .gitignore
 Courtney :: Figured out how to move our "ducky" with processing
 ==============================================================
+
+022-05-31
+--------------------------------------------------------------
+Fang :: healing at home
+Bri :: made the flowchart with the trippy arrows + fixed propro pdf
+Courtney :: also made the flowchart the one on the keys were messy
+==============================================================
