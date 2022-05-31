@@ -67,4 +67,5 @@ Bri :: Also continued UML diagram and ran to get an extra propro
 --------------------------------------------------------------
 Fang :: Completed, transcribed, and uploaded our basic UML diagrams
 Bri :: Updated .gitignore
+Courtney :: Figured out how to move our "ducky" with processing
 ==============================================================
