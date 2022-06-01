@@ -70,9 +70,16 @@ Bri :: Updated .gitignore
 Courtney :: Figured out how to move our "ducky" with processing
 ==============================================================
 
-022-05-31
+2022-05-31
 --------------------------------------------------------------
 Fang :: Healing at home, created classes Environment and Entity, start v1
 Bri :: Made the flowchart with the trippy arrows + fixed propro pdf
 Courtney :: Also made the flowchart the one on the keys were messy
+==============================================================
+
+2022-06-01
+--------------------------------------------------------------
+Fang :: Continuing to heal at home
+Bri :: Initiated call with FMC, looked into processng and how to create motion
+Courtney :: Attempted rectangle creation
 ==============================================================
