@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 /* COLOR KEY */
 //final color red = color(255, 0, 0);
 //final color green = color(0, 255, 0);
@@ -11,7 +12,8 @@
 public class Environment {
 
   private int[] col;
-  
+
+
   public Environment() {
     col = new int[3];
   }
