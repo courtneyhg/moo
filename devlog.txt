@@ -70,16 +70,23 @@ Bri :: Updated .gitignore
 Courtney :: Figured out how to move our "ducky" with processing
 ==============================================================
 
-022-05-31
+2022-05-31
 --------------------------------------------------------------
 Fang :: Healing at home, created classes Environment and Entity, start v1
 Bri :: Made the flowchart with the trippy arrows + fixed propro pdf
 Courtney :: Also made the flowchart the one on the keys were messy
 ==============================================================
 
-022-06-01
+2022-06-01
 --------------------------------------------------------------
 Fang :: facetimed us whoo hoo and picked up our slack
 Bri :: called fang from her laptop
 Courtney :: joined the call and got rid of confusion
+==============================================================
+
+2022-06-01
+--------------------------------------------------------------
+Fang :: healing
+Bri :: worked on entities
+Courtney :: worked on environment timing
 ==============================================================

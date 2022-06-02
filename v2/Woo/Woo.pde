@@ -1,16 +1,26 @@
-Grass pop = new Grass();
+Grass grassy = new Grass();
+Milk milky = new Milk();
 Duck cow = new Duck();
+int time;
 
 void setup()
 {
   size (480,720 );
-  fill(345,232,435);
+  background(0);
 }
 
 void draw()
 {
-  pop.move();
-  pop.spawn();
+  grassy.move();
+  grassy.spawn();
+
+  if (millis() > time){
+    time = millis()+300;
+    milky.move();
+    milky.spawn();
+  }
+
+  fill(234,232,827);
   ellipse(cow.getX(), cow.getY(), 40, 40);
 }
 
