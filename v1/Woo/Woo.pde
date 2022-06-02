@@ -1,18 +1,20 @@
 int yPos=720;
 int xPos=240;
 int dir=-50;
+Grass pop = new Grass();
 
 void setup()
 {
   size (480,720 );
-  background(0, 100, 0);
+  //background(0, 100, 0);
   fill(345,232,435);
   ellipse(xPos, yPos, 40, 40);
 }
 
 void draw()
 {
-  //Grass.spawn();
+  pop.move();
+  pop.spawn();
 }
 
 void keyPressed(){
