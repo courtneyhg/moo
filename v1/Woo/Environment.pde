@@ -30,7 +30,7 @@ public class Environment {
   void move() {
     y = y + speed;
     if (y > height) {
-      x = 0;
+      y = 0;
     }
   }
 }
