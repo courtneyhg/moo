@@ -1,9 +1,9 @@
 public class Entity {
 
-  private int x;
-  private int y;
-  private int dx;
-  private int dy;
+  public int x;
+  public int y;
+  public int dx;
+  public int dy;
 
   public Entity() {
     x = 0;
@@ -41,4 +41,3 @@ public class Entity {
 
 
 }
-  

@@ -1,5 +1,5 @@
 class Grass extends Environment{
-  Grass(){
+  public Grass(){
   /*
     col.set(0, 0);
     col.set(1, 255);
