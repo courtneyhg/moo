@@ -1,9 +1,9 @@
 public class Entity {
 
-  private int x;
-  private int y;
-  private int dx;
-  private int dy;
+  public int x;
+  public int y;
+  public int dx;
+  public int dy;
 
   public Entity() {
     x = 0;
@@ -22,6 +22,16 @@ public class Entity {
     return y;
   }
 
+  // Modifiers
+
+  public void setX(int val) {
+    x = val;
+  }
+
+    public void setY(int val) {
+    y = val;
+  }
+  
   // Methods
 
   public boolean isHere(Entity e) {
@@ -41,4 +51,3 @@ public class Entity {
 
 
 }
-  

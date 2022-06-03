@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 /* COLOR KEY */
 //final color red = color(255, 0, 0);
 //final color green = color(0, 255, 0);
@@ -11,7 +12,10 @@
 public class Environment {
 
   private int[] col;
-  
+  float x = 0;
+  float y = 0;
+  float speed = 1;
+
   public Environment() {
     col = new int[3];
   }
@@ -21,5 +25,19 @@ public class Environment {
   public int[] getColor() {
     return col;
   }
+
+  public float getY() {
+    return y;
+  }
+
+  void move() {
+    y = y + speed;
+    /*
+    if (y > height) {
+      y = 0;
+    }
+    */
+  }
+
 
 }
