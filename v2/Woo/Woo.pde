@@ -2,7 +2,9 @@ Grass grassy = new Grass();
 Milk milky = new Milk();
 Duck cow = new Duck();
 int time;
+int n = 0;
 PImage img;
+boolean isCreated = false;
 
 
 void setup()
@@ -15,13 +17,19 @@ void setup()
 
 void draw()
 {
+  n += 1;
+  grassy.spawn(0);
   grassy.move();
-  grassy.spawn();
 
-  if (grassy.getY() > 60) {
-    milky.move();
-    milky.spawn();
+  if (n == 60){  //later do mod 60 to spawn other lands
+    milky.spawn(0);
+    isCreated = true;
   }
+
+  if (isCreated){
+    milky.move();
+  }
+
 
   //fill(234,232,827);
   //ellipse(cow.getX(), cow.getY(), 40, 40);
