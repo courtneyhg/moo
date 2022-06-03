@@ -90,3 +90,11 @@ Fang :: healing
 Bri :: worked on entities
 Courtney :: worked on environment timing
 ==============================================================
+
+2022-06-03
+--------------------------------------------------------------
+Fang :: Created a copy of Woo in v3 to test out translation. Translation
+success, onto v4! Acquired cute png of cow, knife, and tree <3
+Bri :: 
+Courtney :: 
+==============================================================
