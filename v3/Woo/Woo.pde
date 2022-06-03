@@ -11,7 +11,7 @@ void setup()
 {
   size (480,720 );
   background(0);
-  img = loadImage("cow.jpg");
+  img = loadImage("cow.png");
 
 }
 
