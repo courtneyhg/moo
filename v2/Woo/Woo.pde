@@ -2,11 +2,15 @@ Grass grassy = new Grass();
 Milk milky = new Milk();
 Duck cow = new Duck();
 int time;
+PImage img;
+
 
 void setup()
 {
   size (480,720 );
   background(0);
+  img = loadImage("cow.jpg");
+
 }
 
 void draw()
@@ -14,14 +18,14 @@ void draw()
   grassy.move();
   grassy.spawn();
 
-  if (millis() > time){
-    time = millis()+300;
+  if (grassy.getY() > 60) {
     milky.move();
     milky.spawn();
   }
 
-  fill(234,232,827);
-  ellipse(cow.getX(), cow.getY(), 40, 40);
+  //fill(234,232,827);
+  //ellipse(cow.getX(), cow.getY(), 40, 40);
+  image(img, cow.getX(), cow.getY(), 40, 40);
 }
 
 void keyPressed(){

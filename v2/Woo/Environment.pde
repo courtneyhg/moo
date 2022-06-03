@@ -27,11 +27,17 @@ public class Environment {
     return col;
   }
 
+  public float getY() {
+    return y;
+  }
+
   void move() {
     y = y + speed;
+    /*
     if (y > height) {
       y = 0;
     }
+    */
   }
 
 
