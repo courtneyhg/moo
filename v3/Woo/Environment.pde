@@ -16,7 +16,6 @@ public class Environment {
   float y = 0;
   float speed = 1;
 
-
   public Environment() {
     col = new int[3];
   }

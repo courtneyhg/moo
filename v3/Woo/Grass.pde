@@ -9,7 +9,7 @@ class Grass extends Environment{
 
   void spawn(int n){
     fill(0, 255, 0);
-    rect(x, y-n, 480, height/12);
+    rect(x, y+n, 480, height/12);
   }
 
 }

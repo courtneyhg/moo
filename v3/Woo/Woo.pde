@@ -1,5 +1,5 @@
 Grass grassy = new Grass();
-Milk milky = new Milk();
+Road roady = new Road();
 Duck cow = new Duck();
 int time;
 int n = 0;
@@ -17,6 +17,23 @@ void setup()
 
 void draw()
 {
+  grassy.spawn(0);
+  grassy.spawn(60);
+  grassy.spawn(120);
+  grassy.spawn(180);
+  grassy.spawn(240);
+  roady.spawn(300);
+  grassy.spawn(360);
+  grassy.spawn(420);
+  grassy.spawn(480);
+  grassy.spawn(540);
+  grassy.spawn(600);
+  grassy.spawn(660);
+  grassy.spawn(720);
+
+  //roady.spawn(0);
+
+/*
   n += 1;
   grassy.spawn(0);
   grassy.move();
@@ -29,6 +46,7 @@ void draw()
   if (isCreated){
     milky.move();
   }
+  */
 
 
   //fill(234,232,827);
