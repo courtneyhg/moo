@@ -1,0 +1,3 @@
+class Cereal extends Entity {
+
+}

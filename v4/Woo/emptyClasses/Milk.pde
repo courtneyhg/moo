@@ -1,5 +1,5 @@
-class Road extends Environment{
-  public Road(){
+class Milk extends Environment{
+  public Milk(){
 
   }
 

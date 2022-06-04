@@ -19,10 +19,10 @@ void setup()
 void draw()
 {
   pushMatrix();
-  translate(0, 30);
+  translate(0, 1);
   background(100);
-  cow.setY(cow.getY() + 30);
-  image(img, cow.getX() - 30, cow.getY() - 30, 60, 60);
+  cow.setY(cow.getY() + 1);
+  image(img, cow.getX() - 1, cow.getY() - 1, 60, 60);
   rect(20, 20, 40, 40);
   popMatrix();
 }
