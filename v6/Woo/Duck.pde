@@ -1,6 +1,6 @@
 class Duck extends Entity{
   Duck(){
-    y = 720;
+    y = 420;
     x = 240;
     dy = -60;
     dx = -60;
