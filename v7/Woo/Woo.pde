@@ -43,7 +43,7 @@ void setup()
   img = loadImage("cow.png");
   knife = loadImage("knife.png");
   tree = loadImage("tree.png");
-  image(img, cow.getX(), cow.getY(), 40, 40);
+  image(img, cow.getX() - 30, cow.getY() -30, 60, 60);
 
 }
 
