@@ -7,7 +7,7 @@ Tree(Grass g){
 }
 
   void spawnTree(){
-    image(tree, x, y, 40, 40);
+    image(tree, x, y, 60, 60);
   }
 
   void moveTree(){

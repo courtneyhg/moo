@@ -43,7 +43,6 @@ void setup()
   img = loadImage("cow.png");
   knife = loadImage("knife.png");
   tree = loadImage("tree.png");
-  image(img, cow.getX() - 30, cow.getY() -30, 60, 60);
 
 }
 
@@ -76,7 +75,7 @@ void draw()
   g1.spawn(t1);
   g1.move(t1);
 
-  image(img, cow.getX() - 30, cow.getY(), 60, 60);
+  image(img, cow.getX() - 30, cow.getY(), 50, 50);
   cow.naturalMove();
 
 
