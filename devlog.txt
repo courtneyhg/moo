@@ -107,3 +107,11 @@ Fang ::
 Bri ::
 Courtney :: made v6 and was able to stick the cow to moving lands
 ==============================================================
+
+2022-06-05
+--------------------------------------------------------------
+Fang ::
+Bri ::
+Courtney :: made v7, stopped game when cow died, added knives, for now
+            the knives only kills cow the first time (will fix later)
+==============================================================
