@@ -24,6 +24,11 @@ public class Environment {
     return col;
   }
 
+  void spawn() {
+    fill(0, 255, 0);
+    rect(x, y, 480, height/12);
+  }
+
 
 
 
