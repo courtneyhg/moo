@@ -76,7 +76,7 @@ void draw()
   g1.spawn(t1);
   g1.move(t1);
 
-  image(img, cow.getX(), cow.getY(), 40, 40);
+  image(img, cow.getX() - 30, cow.getY(), 60, 60);
   cow.naturalMove();
 
 
