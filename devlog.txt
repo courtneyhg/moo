@@ -12,6 +12,8 @@ CrossyRoad [Name tba]
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 wow we so BOSS bc...
+- figured out how to move the Environment (naming conflicts and issues with instance variables)
+  and used the System.out.println in the console to debug
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -95,6 +97,28 @@ Courtney :: worked on environment timing
 --------------------------------------------------------------
 Fang :: Created a copy of Woo in v3 to test out translation. Translation
 success, onto v4! Acquired cute png of cow, knife, and tree <3
-Bri :: 
-Courtney :: 
+Bri ::
+Courtney :: made v5 and figured out how to move the lands continuously
+==============================================================
+
+2022-06-04
+--------------------------------------------------------------
+Fang ::
+Bri ::
+Courtney :: made v6 and was able to stick the cow to moving lands
+==============================================================
+
+2022-06-05
+--------------------------------------------------------------
+Fang ::
+Bri ::
+Courtney :: made v7, stopped game when cow died, added knives, for now
+            the knives only kills cow the first time (will fix later)
+==============================================================
+
+2022-06-06
+--------------------------------------------------------------
+Fang ::
+Bri ::
+Courtney :: added trees
 ==============================================================
