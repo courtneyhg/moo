@@ -7,18 +7,25 @@ private float speed = 1;
     y = n;
   }
 
-  void spawn(){
+  void spawn(Tree t){
     fill(0, 255, 0);
     rect(x, y, 480, height/12);
+    t.spawnTree();
   }
 
-  void move() {
+  void move(Tree t) {
     y = y + speed;
 
     if (y > height) {
       y = -60;
     }
+    t.moveTree();
 
   }
+
+  public float getY() {
+    return y;
+  }
+
 
 }

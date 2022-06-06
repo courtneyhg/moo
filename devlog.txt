@@ -115,3 +115,10 @@ Bri ::
 Courtney :: made v7, stopped game when cow died, added knives, for now
             the knives only kills cow the first time (will fix later)
 ==============================================================
+
+2022-06-06
+--------------------------------------------------------------
+Fang ::
+Bri ::
+Courtney :: added trees
+==============================================================

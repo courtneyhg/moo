@@ -1,13 +1,13 @@
 class Knife extends Entity {
   Knife(Road r){
-    x = 0;
+    x = (int)Math.random()*241; // fix this too they are all spawning in the same spot
     y = (int)r.getY();
-    dy = 0;
+    dy = 1;
     dx = (int)Math.random()*3 + 1; //yo fix this to make it random
   }
 
   void moveKnife(){
-    y = y + 1;
+    y = y + dy;
     if (y > height) {
       y = -60;
     }
@@ -18,21 +18,21 @@ class Knife extends Entity {
     }
   }
 
-
   void checkStatus(Duck c){
     if (x == c.getX() && y == c.getY()){
+      System.out.println(c.deathStatus);
       c.died();
     }
   }
 
-
-  /*
+/*
+  // seems to work the same way as checkStatus^^
   void checkStatus(Duck c){
     if (isHere(c)){
       c.deathStatus = true;
     }
   }
-  */
+*/
 
   void spawnKnife(){
     image(knife, x, y, 40, 40);
