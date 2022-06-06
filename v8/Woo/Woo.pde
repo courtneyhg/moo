@@ -75,7 +75,7 @@ void draw()
   g1.spawn(t1);
   g1.move(t1);
 
-  image(img, cow.getX() - 30, cow.getY(), 50, 50);
+  image(img, cow.getX(), cow.getY(), 50, 50);
   cow.naturalMove();
 
 
@@ -98,7 +98,9 @@ void draw()
 
 void keyPressed(){
   if (key == 'W' || key == 'w'){
-    cow.moveUp();
+    if (cow.treeGone){  //bro why is this not working
+      cow.moveUp();
+    }
   }
   if (key == 'S' || key == 's'){
     cow.moveDown();

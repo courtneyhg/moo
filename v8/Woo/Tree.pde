@@ -17,4 +17,10 @@ Tree(Grass g){
     }
   }
 
+  void withDuck(Duck c){
+    if (x == c.getX() && y == c.getY()-60){
+      c.treeGone = false;
+    }
+  }
+
 }

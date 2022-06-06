@@ -1,5 +1,6 @@
 class Duck extends Entity{
   boolean deathStatus = false;
+  boolean treeGone = true;
 
   Duck(){
     y = 420;
@@ -13,6 +14,7 @@ class Duck extends Entity{
   }
 
   void moveDown(){
+
     y = y - dy;
   }
 
