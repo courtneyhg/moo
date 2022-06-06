@@ -43,7 +43,28 @@ void draw()
       
     }
 
+<<<<<<< HEAD
     ticker = 60;
+=======
+  image(img, cow.getX(), cow.getY(), 50, 50);
+  cow.naturalMove();
+
+
+  //why is this only running once?
+  k1.checkStatus(cow);
+  k2.checkStatus(cow);
+  k3.checkStatus(cow);
+  k4.checkStatus(cow);
+  k5.checkStatus(cow);
+  k6.checkStatus(cow);
+  k7.checkStatus(cow);
+
+  System.out.println(cow.deathStatus);
+  if (cow.isDead() || cow.deathStatus){
+    background(0);
+    // for later - add something that tells the user GAME OVER
+    noLoop();
+>>>>>>> 7eece9ddb285b1a1299aa3ba1be6c544ba10a249
   }
   
 
@@ -57,7 +78,9 @@ void draw()
 
 void keyPressed(){
   if (key == 'W' || key == 'w'){
-    cow.moveUp();
+    if (cow.treeGone){  //bro why is this not working
+      cow.moveUp();
+    }
   }
   if (key == 'S' || key == 's'){
     cow.moveDown();
