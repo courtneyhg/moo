@@ -20,6 +20,7 @@ class Duck extends Entity{
 
   void moveDown(){
     y = y - dy;
+    score --;
   }
 
   void moveLeft(){
@@ -41,6 +42,13 @@ class Duck extends Entity{
 
   void died(){
     deathStatus = true;
+  }
+
+  String showScore(){
+    // for now, the score only represents how far up the cow has made it when it died
+    String points = "";
+    points = points + score;
+    return points;
   }
 
   boolean isDead(){

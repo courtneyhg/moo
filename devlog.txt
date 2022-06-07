@@ -121,3 +121,10 @@ Fang :: Started coding random generation
 Bri :: Explore text methods
 Courtney :: added trees
 ==============================================================
+
+2022-06-07
+--------------------------------------------------------------
+Fang ::
+Bri ::
+Courtney :: mostly fixed trees, added scoring, realized processing uses random() not Math.random()
+==============================================================
