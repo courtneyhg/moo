@@ -118,6 +118,7 @@ void draw()
   t6.treeRight(cow);
 
   //System.out.println(cow.deathStatus);
+  System.out.println(cow.score);
 
   if (cow.isDead() || cow.deathStatus){
     background(0);
@@ -132,11 +133,17 @@ void keyPressed(){
     if (cow.treeT){
       cow.moveUp();
     }
+    else{
+      cow.noMove();
+    }
     cow.treeT = true;
   }
   if (key == 'S' || key == 's'){
     if (cow.treeB){
       cow.moveDown();
+    }
+    else{
+      cow.noMove();
     }
     cow.treeB = true;
   }
@@ -144,11 +151,17 @@ void keyPressed(){
     if (cow.treeL){
       cow.moveLeft();
     }
+    else{
+      cow.noMove();
+    }
     cow.treeL = true;
   }
   if (key == 'D' || key == 'd'){
     if (cow.treeR){
       cow.moveRight();
+    }
+    else{
+      cow.noMove();
     }
     cow.treeR = true;
   }

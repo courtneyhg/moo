@@ -3,7 +3,8 @@ class Knife extends Entity {
     x = (int)random(0, 241); // fix this too they are all spawning in the same spot
     y = (int)r.getY();
     dy = 1;
-    dx = (int)random(0, 2) + 1; //yo fix this to make it random
+    //dx = (int)random(0, 2) + 1; //yo fix this to make it random
+    dx = 0;
   }
 
   void moveKnife(){

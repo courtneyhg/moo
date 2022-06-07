@@ -4,6 +4,7 @@ class Duck extends Entity{
   boolean treeB = true;
   boolean treeL = true;
   boolean treeR = true;
+  int score = 0;
 
   Duck(){
     y = 420;
@@ -14,6 +15,7 @@ class Duck extends Entity{
 
   void moveUp(){
     y = y + dy;
+    score ++;
   }
 
   void moveDown(){
@@ -30,6 +32,11 @@ class Duck extends Entity{
 
   void naturalMove(){
     y = y + 1;
+  }
+
+  void noMove(){
+    x = x;
+    y = y;
   }
 
   void died(){
