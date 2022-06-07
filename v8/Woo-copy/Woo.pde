@@ -89,15 +89,35 @@ void draw()
   k6.checkStatus(cow);
   k7.checkStatus(cow);
 
-  t1.withDuck(cow);
-  t2.withDuck(cow);
-  t3.withDuck(cow);
-  t4.withDuck(cow);
-  t5.withDuck(cow);
-  t6.withDuck(cow);
+  t1.treeTop(cow);
+  t2.treeTop(cow);
+  t3.treeTop(cow);
+  t4.treeTop(cow);
+  t5.treeTop(cow);
+  t6.treeTop(cow);
+
+  t1.treeBottom(cow);
+  t2.treeBottom(cow);
+  t3.treeBottom(cow);
+  t4.treeBottom(cow);
+  t5.treeBottom(cow);
+  t6.treeBottom(cow);
+
+  t1.treeLeft(cow);
+  t2.treeLeft(cow);
+  t3.treeLeft(cow);
+  t4.treeLeft(cow);
+  t5.treeLeft(cow);
+  t6.treeLeft(cow);
+
+  t1.treeRight(cow);
+  t2.treeRight(cow);
+  t3.treeRight(cow);
+  t4.treeRight(cow);
+  t5.treeRight(cow);
+  t6.treeRight(cow);
 
   //System.out.println(cow.deathStatus);
-  System.out.println(cow.treeGone);
 
   if (cow.isDead() || cow.deathStatus){
     background(0);
@@ -107,30 +127,30 @@ void draw()
 }
 
 void keyPressed(){
-  // it does not reset treeGone back to true so the cow cant move
+  // same problem as knives it doesnt run the second time
   if (key == 'W' || key == 'w'){
-    if (cow.treeGone){
+    if (cow.treeT){
       cow.moveUp();
     }
-    //cow.treeGone = true;
+    cow.treeT = true;
   }
   if (key == 'S' || key == 's'){
-    if (cow.treeGone){
+    if (cow.treeB){
       cow.moveDown();
     }
-    //cow.treeGone = true;
+    cow.treeB = true;
   }
   if (key == 'A' || key == 'a'){
-    if (cow.treeGone){
+    if (cow.treeL){
       cow.moveLeft();
     }
-    //cow.treeGone = true;
+    cow.treeL = true;
   }
   if (key == 'D' || key == 'd'){
-    if (cow.treeGone){
+    if (cow.treeR){
       cow.moveRight();
     }
-    //cow.treeGone = true;
+    cow.treeR = true;
   }
-  cow.treeGone = true;
+
 }

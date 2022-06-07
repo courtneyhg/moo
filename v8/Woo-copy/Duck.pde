@@ -1,6 +1,9 @@
 class Duck extends Entity{
   boolean deathStatus = false;
-  boolean treeGone = true;
+  boolean treeT = true;
+  boolean treeB = true;
+  boolean treeL = true;
+  boolean treeR = true;
 
   Duck(){
     y = 420;

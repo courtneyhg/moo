@@ -17,19 +17,29 @@ Tree(Grass g){
     }
   }
 
-  void withDuck(Duck c){
+  void treeTop(Duck c){
     if (x == c.getX() && y == c.getY()-60){ //there is a tree when you press W
-      c.treeGone = false;
-    }
-    if (x == c.getX() && y == c.getY()+60){ //there is a tree when you press S
-      c.treeGone = false;
-    }
-    if (x == c.getX()-60 && y == c.getY()){ //there is a tree when you press A
-      c.treeGone = false;
-    }
-    if (x == c.getX()+60 && y == c.getY()){ //there is a tree when you press D
-      c.treeGone = false;
+      c.treeT = false;
     }
   }
+
+  void treeBottom(Duck c){
+    if (x == c.getX() && y == c.getY()+60){ //there is a tree when you press S
+      c.treeB = false;
+    }
+  }
+
+  void treeLeft(Duck c){
+    if (x == c.getX()-60 && y == c.getY()){ //there is a tree when you press A
+      c.treeL = false;
+    }
+  }
+
+  void treeRight(Duck c){
+    if (x == c.getX()+60 && y == c.getY()){ //there is a tree when you press D
+      c.treeR = false;
+    }
+  }
+
 
 }
