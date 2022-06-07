@@ -1,6 +1,6 @@
 class Tree extends Entity {
 Tree(Grass g){
-  x = 0;
+  x = (int)random(0, 241);
   y = (int)g.getY();
   dy = 1;
   dx = 0;
