@@ -1,13 +1,7 @@
-class Grass extends Environment{
+public class Grass extends Environment {
 
-  
-  public Grass(int n){
-    y = n;
+  public Grass() {
+    super(color(0, 255, 0));
   }
-
-  public float getY() {
-    return y;
-  }
-
 
 }

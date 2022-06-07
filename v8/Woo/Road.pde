@@ -1,11 +1,7 @@
-class Road extends Environment{
+public class Road extends Environment {
 
-  public Road(int n){
-    y = n;
-  }
-
-  public float getY() {
-    return y;
+  public Road() {
+    super(color(100));
   }
 
 }

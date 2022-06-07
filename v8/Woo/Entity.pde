@@ -1,15 +1,17 @@
 public class Entity {
 
-  public int x;
-  public int y;
-  public int dx;
-  public int dy;
+  boolean isAlive;
+  int x, y;
+  int speed;
 
   public Entity() {
-    x = 0;
-    y = 0;
-    dx = 1;
-    dy = 1;
+    isAlive = true;
+  }
+
+  public Entity(int xPos, int yPos) {
+    this();
+    x = xPos;
+    y = yPos;
   }
 
   // Accessors
@@ -22,22 +24,14 @@ public class Entity {
     return y;
   }
 
-  // Methods
+  // Modifiers
 
-  public boolean isHere(Entity e) {
-    return (x == e.getX() && y == e.getY());
+  public void setX(int num) {
+    x = num;
   }
 
-  public void graphics() {
-
+  public void setY(int num) {
+    y = num;
   }
-
-  public void killed() {
-    x = -1;
-    y = -1;
-    dx = 0;
-    dy = 0;
-  }
-
 
 }

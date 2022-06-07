@@ -1,48 +1,19 @@
-class Duck extends Entity{
-  boolean deathStatus = false;
-  boolean treeGone = true;
+public class Duck extends Entity {
 
-  Duck(){
-    y = 420;
-    x = 240;
-    dy = -60;
-    dx = -60;
+  public Duck() {
+    super(240, 420);
   }
 
-  void moveUp(){
-    y = y + dy;
+  public void moveY(int dy) {
+    setY(getY() + dy);
   }
 
-  void moveDown(){
-
-    y = y - dy;
+  public void moveX(int dx) {
+    setX(getX() + dx);
   }
 
-  void moveLeft(){
-    x = x + dx;
+  public boolean isHere(Entity e) {
+    return (x == e.getX() && y == e.getY());
   }
-
-  void moveRight(){
-    x = x - dx;
-  }
-
-  void shiftY(int num){
-    y = y + num;
-  }
-
-  void died(){
-    deathStatus = true;
-  }
-
-  boolean isDead(){
-    if (y >= height || y < 0){
-      deathStatus = true;
-    }
-    if (x >= width || x < 0){
-      deathStatus = true;
-    }
-    return deathStatus;
-  }
-
 
 }
