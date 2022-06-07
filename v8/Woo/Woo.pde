@@ -1,12 +1,10 @@
-import java.util.Queue;
-
 Duck cow = new Duck();
-
-Queue<Environment> envs;
+Environment[] opts;
+Environment[] envs;
 PImage img;
 PImage knife;
 PImage tree;
-int ticker = 60;
+int ticker = 0;
 int shiftv = 1;
 Environment nextEnv;
 
@@ -17,39 +15,41 @@ void setup()
   img = loadImage("cow.png");
   knife = loadImage("knife.png");
   tree = loadImage("tree.png");
-  envs = new Queue<Environment>();
-  for (int i = 11; i >= 0; i ++) {
-    nextEnv = new Grass(i*60);
-    nextEnv.spawn();
-    envs.push(nextEnv);
-  }
-  nextEnv = new Road(-1);
-  envs.push(nextEnv);
   
+  // current Envs
+  envs = new Environment[13];
+  for (int i = 0; i < 12; i ++) {
+    nextEnv = new Grass(i*60);
+    
+    envs[i] = (nextEnv);
+  }
+  
+  //// Options for Envs
+  //opts = Environment[12]
+  //for (int i = 0; i < 6; i ++) {
+  //  opts[i] = (new Road(-1));
+  //}
+  //for (int i = 0; i < 6; i ++) {
+  //  opts.add(new Grass(-1));
+  //}
 }
 
 void draw()
 {
-  if (ticker > 0) {
-    ticker --;
-  } else {
-    int opt = Math.random() * 3;
-    if (opt > 2) {
-      envs.pop();
-      nextEnv = new Grass(-1);
-      envs.push(nextEnv);
-    // } else if (opt > 1) {
-    } else {
-      
-    }
-    ticker = 60;
-  }
+  //if (ticker > 0) {
+  //  ticker --;
+  //} else {
+  //  int opt = (int)(Math.random() * 12);
+  //  envs.add(opts.get(opt));
+  //  opts.add(envs.remove(0));
+  //  ticker = 60;
+  //}
 
   for (Environment e : envs) {
-    e.move();
+    //e.move();
     e.spawn();
   }
-  cow.naturalMove();
+  //cow.naturalMove();
   image(img, cow.getX(), cow.getY(), 50, 50);
 
 /*

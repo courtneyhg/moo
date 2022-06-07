@@ -11,10 +11,10 @@ import java.util.ArrayList;
 
 public class Environment {
 
-  private int[] col;
-  private float x = 0;
-  private float y = 0;
-  private float speed = 1;
+  protected int[] col;
+  protected float x = 0;
+  protected float y = 0;
+  protected float speed = 1;
 
   public Environment() {
     col = new int[3];
@@ -24,6 +24,11 @@ public class Environment {
 
   public int[] getColor() {
     return col;
+  }
+  
+  // Modifiers
+  public void set(float num) {
+    y = num;
   }
 
   void spawn() {
@@ -37,6 +42,7 @@ public class Environment {
     if (y > height) {
       y = -60;
     }
+  
 
   }
 
