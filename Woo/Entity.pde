@@ -22,16 +22,6 @@ public class Entity {
     return y;
   }
 
-  // Modifiers
-
-  public void setX(int val) {
-    x = val;
-  }
-
-    public void setY(int val) {
-    y = val;
-  }
-  
   // Methods
 
   public boolean isHere(Entity e) {
