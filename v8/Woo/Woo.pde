@@ -1,11 +1,11 @@
 Duck cow = new Duck();
-Environment[] opts;
-Environment[] envs;
 PImage img;
 PImage knife;
 PImage tree;
 int ticker = 0;
 int shiftv = 1;
+Environment grass = new Grass(-1);
+Environment road = new Road(-1);
 Environment nextEnv;
 
 void setup()
@@ -16,40 +16,13 @@ void setup()
   knife = loadImage("knife.png");
   tree = loadImage("tree.png");
   
-  // current Envs
-  envs = new Environment[13];
-  for (int i = 0; i < 12; i ++) {
-    nextEnv = new Grass(i*60);
-    
-    envs[i] = (nextEnv);
-  }
-  
-  //// Options for Envs
-  //opts = Environment[12]
-  //for (int i = 0; i < 6; i ++) {
-  //  opts[i] = (new Road(-1));
-  //}
-  //for (int i = 0; i < 6; i ++) {
-  //  opts.add(new Grass(-1));
-  //}
 }
 
 void draw()
 {
-  //if (ticker > 0) {
-  //  ticker --;
-  //} else {
-  //  int opt = (int)(Math.random() * 12);
-  //  envs.add(opts.get(opt));
-  //  opts.add(envs.remove(0));
-  //  ticker = 60;
-  //}
-
-  for (Environment e : envs) {
-    //e.move();
-    e.spawn();
-  }
-  //cow.naturalMove();
+  background(255);
+  
+  cow.shifty(shiftv);
   image(img, cow.getX(), cow.getY(), 50, 50);
 
 /*

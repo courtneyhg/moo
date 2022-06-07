@@ -26,8 +26,8 @@ class Duck extends Entity{
     x = x - dx;
   }
 
-  void naturalMove(){
-    y = y + 1;
+  void shiftY(int num){
+    y = y + num;
   }
 
   void died(){
