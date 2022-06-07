@@ -42,14 +42,17 @@ void draw()
     } else {
       
     }
-
-<<<<<<< HEAD
     ticker = 60;
-=======
-  image(img, cow.getX(), cow.getY(), 50, 50);
+  }
+
+  for (Environment e : envs) {
+    e.move();
+    e.spawn();
+  }
   cow.naturalMove();
+  image(img, cow.getX(), cow.getY(), 50, 50);
 
-
+/*
   //why is this only running once?
   k1.checkStatus(cow);
   k2.checkStatus(cow);
@@ -64,7 +67,6 @@ void draw()
     background(0);
     // for later - add something that tells the user GAME OVER
     noLoop();
->>>>>>> 7eece9ddb285b1a1299aa3ba1be6c544ba10a249
   }
   
 
@@ -74,6 +76,9 @@ void draw()
   //   // for later - add something that tells the user GAME OVER
   //   noLoop();
   // }
+
+*/
+
 }
 
 void keyPressed(){

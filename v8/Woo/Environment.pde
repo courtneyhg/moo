@@ -12,7 +12,9 @@ import java.util.ArrayList;
 public class Environment {
 
   private int[] col;
-
+  private float x = 0;
+  private float y = 0;
+  private float speed = 1;
 
   public Environment() {
     col = new int[3];
@@ -29,7 +31,14 @@ public class Environment {
     rect(x, y, 480, height/12);
   }
 
+  void move() {
+    y = y + speed;
 
+    if (y > height) {
+      y = -60;
+    }
+
+  }
 
 
 
