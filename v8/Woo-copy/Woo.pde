@@ -122,7 +122,8 @@ void draw()
 
   if (cow.isDead() || cow.deathStatus){
     background(0);
-    // for later - add something that tells the user GAME OVER
+    text("GAME OVER",10,100);
+    text("Score: " + cow.showScore(),100,100);
     noLoop();
   }
 }
