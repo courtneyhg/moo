@@ -45,7 +45,7 @@ void setup() {
   background(0);
   // Mooing
   introMoo = new SoundFile(this, "cow.wav");
-  introMoo.amp(0.03);
+  introMoo.amp(0.3);
   introMoo.play();
 }
 
