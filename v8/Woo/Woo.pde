@@ -1,23 +1,39 @@
-PImage img;
+PImage cow;
 PImage knife;
 PImage tree;
 boolean gameStart;
-Duck cow = new Duck();
-
+Duck duck = new Duck();
 final int duckV = 60;
+
+int shiftY = 0;
+PImage bg = createImage(480, 720, 255);
+Environment[] envs = new Environment[3];
+int currEnv;
+ArrayList<Environment> allEnv = new ArrayList<Environment>();
 
 void setup() {
   
   // Load PNGs
-  img = loadImage("cow.png");
+  cow = loadImage("cow.png");
   knife = loadImage("knife.png");
   tree = loadImage("tree.png");
 
-  // Start Screen
+  // Preparation
   size (480, 720);
-  background(0);
   gameStart = false;
-  imageMode(CENTER);
+  envs[0] = new Grass();
+  envs[1] = new Road();
+  envs[2] = new Road();
+
+  // Set Game Background
+  currEnv = 0;
+  for (int i = 0; i < 13; i ++) {
+    allEnv.add(envs[currEnv]);
+  }
+
+  // Start Screen
+  background(0);
+  image(bg, 0, 0);
   
 }
 
@@ -26,20 +42,21 @@ void keyPressed() {
   // To Start
   if (key == ' ') {
     gameStart = true;
+    loop();
   }
   
   // To Move
   if (key == 'W' || key == 'w'){
-    cow.moveY(-duckV);
+    duck.moveY(-duckV);
   }
   if (key == 'S' || key == 's'){
-    cow.moveY(duckV);
+    duck.moveY(duckV);
   }
   if (key == 'A' || key == 'a'){
-    cow.moveX(-duckV);
+    duck.moveX(-duckV);
   }
   if (key == 'D' || key == 'd'){
-    cow.moveX(duckV);
+    duck.moveX(duckV);
   }
 }
 
@@ -48,7 +65,34 @@ void draw() {
   // Pressed Space
   if (gameStart == true) {
     
-     image(img, cow.getX(), cow.getY(), 50, 50);
-  
+    if (shiftY == 59) {
+      currEnv = int(random(3));    
+      allEnv.remove(1);
+      allEnv.add(envs[currEnv]);
+
+      shiftY = 0;
+
+    } else {
+      shiftY ++;
+    }
+
+    // Shift Entities
+    duck.setY(duck.getY() + 1);
+
+    // Draw Board
+    for (int i = 0; i < 13; i ++) {
+      allEnv.get(i).drawEnv((11-i) * 60 + shiftY);
+    }
+
+    // Draw Cow
+    image(cow, duck.getX(), duck.getY(), 50, 50);
   }
 }
+
+// void checkDeath() {
+
+// }
+
+// void checkMove() {
+
+// }
