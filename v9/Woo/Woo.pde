@@ -1,6 +1,8 @@
 // Setup Variables
+import processing.sound.*;
 PImage cow, knife, tree;
 boolean gameStart;
+SoundFile introMoo;
 
 // Environment Variables
 int shiftY = 0;
@@ -41,7 +43,10 @@ void setup() {
 
   // Start Screen
   background(0);
-  
+  // Mooing
+  introMoo = new SoundFile(this, "cow.wav");
+  introMoo.amp(0.03);
+  introMoo.play();
 }
 
 void keyPressed() {
