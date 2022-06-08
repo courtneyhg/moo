@@ -1,7 +1,7 @@
 public class Duck extends Entity {
 
   public Duck() {
-    super(240, 420);
+    super(60, 540);
   }
 
   public void moveY(int dy) {
