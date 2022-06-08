@@ -1,7 +1,7 @@
 public class Road extends Environment {
 
   public Road() {
-    super(color(100));
+    super(color(150));
   }
 
 }
