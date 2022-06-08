@@ -1,15 +1,24 @@
+// Setup Variables
 PImage cow;
 PImage knife;
 PImage tree;
 boolean gameStart;
-Duck duck = new Duck();
-final int duckV = 60;
 
+// Environment Variables
 int shiftY = 0;
-PImage bg = createImage(480, 720, 255);
 Environment[] envs = new Environment[3];
 int currEnv;
 ArrayList<Environment> allEnv = new ArrayList<Environment>();
+
+// Entity Variables
+Duck duck = new Duck();
+final int duckV = 60;
+
+// Points
+int pts = 0;
+int netPts = 0;
+
+/************************ CROSS ROAD ***************************/
 
 void setup() {
   
@@ -48,9 +57,13 @@ void keyPressed() {
   // To Move
   if (key == 'W' || key == 'w'){
     duck.moveY(-duckV);
+    netPts = netPts + 1;
+    updatePts();
   }
   if (key == 'S' || key == 's'){
     duck.moveY(duckV);
+    netPts = netPts - 1;
+    updatePts();
   }
   if (key == 'A' || key == 'a'){
     duck.moveX(-duckV);
@@ -96,3 +109,9 @@ void draw() {
 // void checkMove() {
 
 // }
+
+void updatePts() {
+  if (netPts > pts) {
+    pts = netPts;
+  }
+}
