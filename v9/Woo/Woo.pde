@@ -57,7 +57,7 @@ void keyPressed() {
     gameStart = true;
   }
   
-  // To Move
+  // Move Up
   if (key == 'W' || key == 'w'){
     duck.moveY(-duckV);
 
@@ -69,19 +69,44 @@ void keyPressed() {
 
     netPts = netPts + 1;
     updatePts();
-
   }
+  
+  // Move Down
   if (key == 'S' || key == 's'){
     duck.moveY(duckV);
+
+    // Cannot move if a Tree is in the path
+    if (!checkMove()) {
+      duck.moveY(-duckV);
+      return;
+    }
+
     netPts = netPts - 1;
     updatePts();
   }
+
+  // Move Left
   if (key == 'A' || key == 'a'){
     duck.moveX(-duckV);
+
+    // Cannot move if a Tree is in the path
+    if (!checkMove()) {
+      duck.moveX(duckV);
+      return;
+    }
   }
+
+  // Move Right
   if (key == 'D' || key == 'd'){
     duck.moveX(duckV);
+
+    // Cannot move if a Tree is in the path
+    if (!checkMove()) {
+      duck.moveX(-duckV);
+      return;
+    }
   }
+
 }
 
 void draw() {
@@ -100,12 +125,12 @@ void draw() {
       }
 
       if (currEnv == 0 ) {
-        allEnt.add(new Tree(int(random(8)) * 60, -60));
-        allEnt.add(new Tree(int(random(8)) * 60, -60));
+        allEnt.add(new Tree(int(random(8)) * 60, -61));
+        allEnt.add(new Tree(int(random(8)) * 60, -61));
       }
       if (currEnv == 1 || currEnv == 2 ) {
-        allEnt.add(new Knife(int(random(480)), -60));
-        allEnt.add(new Knife(int(random(480)), -60));
+        allEnt.add(new Knife(int(random(480)), -61));
+        allEnt.add(new Knife(int(random(480)), -61));
       }
 
       shiftY = 0;
@@ -118,9 +143,7 @@ void draw() {
     duck.setY(duck.getY() + 1);
     for (Entity ent : allEnt) {
       ent.setY(ent.getY() + 1);
-
-      // Natural movement
-      ent.move();
+      ent.move(); // Natural movement
     }
 
     // Draw Board
@@ -155,19 +178,15 @@ void draw() {
 
 }
 
-// boolean checkMove(int dx, int dy) {
-//   boolean canMove = true;
-//   duck.moveX(dx);
-//   duck.moveY(dy);
-//   for (Entity ent : allEnt) {
-//     if (ent.getType() == 0 && ent.isHere(duck)) {
-//       canMove = false;
-//     }
-//   }
-//   duck.moveX(-dx);
-//   duck.moveY(-dy);  
-//   return canMove;
-// }
+boolean checkMove() {
+  boolean canMove = true;
+  for (Entity ent : allEnt) {
+    if (ent.getType() == 0 && ent.isHere(duck)) {
+      canMove = false;
+    }
+  }
+  return canMove;
+}
 
 // checkDeath() {
 
