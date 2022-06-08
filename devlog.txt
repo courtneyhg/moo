@@ -131,7 +131,7 @@ Courtney :: mostly fixed trees, added scoring, realized processing uses random()
 
 2022-06-08
 --------------------------------------------------------------
-Fang :: 
+Fang :: Added on-screen pts display 
 Bri :: 
 Courtney :: 
 ==============================================================

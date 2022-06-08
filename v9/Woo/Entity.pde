@@ -1,12 +1,12 @@
 public class Entity {
 
-  boolean isAlive;
+  boolean alive;
   int x, y;
   int dx;
   int type;
 
   public Entity() {
-    isAlive = true;
+    alive = true;
   }
 
   public Entity(int xPos, int yPos) {
@@ -29,6 +29,10 @@ public class Entity {
     return type;
   }
 
+  public boolean isDead() {
+    return !alive;
+  }
+
   // Modifiers
 
   public void setX(int num) {
@@ -37,6 +41,10 @@ public class Entity {
 
   public void setY(int num) {
     y = num;
+  }
+
+  public void kill() {
+    alive = false;
   }
 
   // Methods

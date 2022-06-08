@@ -1,8 +1,8 @@
 // Setup Variables
-import processing.sound.*;
+// import processing.sound.*;
 PImage cow, knife, tree;
 boolean gameStart;
-SoundFile introMoo;
+// SoundFile introMoo;
 
 // Environment Variables
 int shiftY = 0;
@@ -43,10 +43,11 @@ void setup() {
 
   // Start Screen
   background(0);
-  // Mooing
-  introMoo = new SoundFile(this, "cow.wav");
-  introMoo.amp(0.3);
-  introMoo.play();
+
+  // // Mooing
+  // introMoo = new SoundFile(this, "cow.wav");
+  // introMoo.amp(0.3);
+  // introMoo.play();
 }
 
 void keyPressed() {
@@ -79,7 +80,7 @@ void draw() {
   
   // Pressed Space
   if (gameStart == true) {
-    
+
     if (shiftY == 59) {
       currEnv = int(random(3));    
       allEnv.remove(0);
@@ -130,10 +131,28 @@ void draw() {
 
     // Draw Cow
     image(cow, duck.getX(), duck.getY(), 60, 60);
+
+    // Display Score
+    fill(255);
+    textSize(50);
+    text(pts, 20, 60);
+
   }
+
+  if (duck.isDead()) {
+    background(0);
+    text("GAME OVER", 10, 100);
+    text("Score: " + pts, 100, 100);
+    noLoop();
+  }
+
 }
 
 // void checkMove() {
+
+// }
+
+// void checkDeath() {
 
 // }
 
