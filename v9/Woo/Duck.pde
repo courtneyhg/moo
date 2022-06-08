@@ -12,8 +12,4 @@ public class Duck extends Entity {
     setX(getX() + dx);
   }
 
-  public boolean isHere(Entity e) {
-    return (x == e.getX() && y == e.getY());
-  }
-
 }

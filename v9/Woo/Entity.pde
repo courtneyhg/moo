@@ -48,6 +48,10 @@ public class Entity {
   }
 
   // Methods
+  
+  public boolean isHere(Entity e) {
+    return (x == e.getX() && y == e.getY());
+  }
 
   // Nature
   public void move() {
