@@ -1,6 +1,6 @@
 // Setup Variables
 // import processing.sound.*;
-PImage cow, knife, tree, cereal;
+PImage cow, knife, knife2, tree, cereal;
 boolean gameStart;
 // SoundFile introMoo;
 
@@ -27,6 +27,7 @@ void setup() {
   // Load PNGs
   cow = loadImage("cow.png");
   knife = loadImage("knife.png");
+  knife2 = loadImage("knife2.png");
   tree = loadImage("tree.png");
   cereal = loadImage("cereal.png");
 
@@ -138,9 +139,13 @@ void draw() {
         allEnt.add(new Tree(int(random(8)) * 60, -61));
         allEnt.add(new Tree(int(random(8)) * 60, -61));
       }
-      if (currEnv == 1 || currEnv == 2 ) {
+      if (currEnv == 1) {
         allEnt.add(new Knife(int(random(480)), -61));
         allEnt.add(new Knife(int(random(480)), -61));
+      }
+      if (currEnv == 2) {
+        allEnt.add(new Knife(int(random(480)), -61, true));
+        allEnt.add(new Knife(int(random(480)), -61, true));
       }
       if (currEnv == 3 ) {
         allEnt.add(new Cereal(int(random(480)), -61));
@@ -172,6 +177,9 @@ void draw() {
         image(knife, ent.getX(), ent.getY(), 60, 60);
       }
       if (ent.getType() == 2) {
+        image(knife2, ent.getX(), ent.getY(), 60, 60);
+      }
+      if (ent.getType() == 3) {
         image(cereal, ent.getX(), ent.getY(), 60, 60);
       }
     }
@@ -210,7 +218,7 @@ boolean checkMove() {
 boolean checkDeath() {
   boolean death = false;
   for (Entity ent : allEnt){
-    if (ent.getType() == 1 && ent.knifeHere(duck)) {
+    if ((ent.getType() == 1 || ent.getType() == 2) && ent.knifeHere(duck)) {
       death = true;
     }
   }
@@ -221,7 +229,7 @@ boolean checkDeath() {
 boolean checkJump(){
   boolean canJump = false;
   for (Entity ent : allEnt) {
-    if (ent.getType() == 2 && ent.isHere(duck)) {
+    if (ent.getType() == 3 && ent.isHere(duck)) {
       canJump = true;
     }
   }
