@@ -1,6 +1,8 @@
 // Setup Variables
 // import processing.sound.*;
 PImage cow, knife, knife2, tree, cereal;
+boolean gameInstr;
+boolean gameSelect;
 boolean gameStart;
 // SoundFile introMoo;
 
@@ -59,7 +61,13 @@ void keyPressed() {
   
   // To Start
   if (key == ' ') {
-    gameStart = true;
+    if (!gameInstr) {
+      gameInstr = true; // Press space to go to instructions
+    } else if (!gameSelect) {
+      gameSelect = true; // Press space to go to duck selection
+    } else if (!gameStart) {
+      gameStart = true; // Press space to start
+    }
   }
   
   // Move Up
@@ -122,8 +130,17 @@ void keyPressed() {
 
 void draw() {
   
-  // Pressed Space
-  if (gameStart == true) {
+  // Instruction Screen
+  if (gameInstr || !gameSelect) {
+    // TO BE IMPLEMENTED
+  }
+
+  // Character Selection Screen // We'll do this is time allows
+  if (gameSelect || !gameStart) {
+    // TO BE IMPLEMENTED
+  }
+  
+  if (gameStart) {
 
     if (shiftY == 59) {
       currEnv = int(random(4));    
