@@ -1,6 +1,6 @@
 // Setup Variables
 // import processing.sound.*;
-PImage cow, knife, knife2, tree, cereal;
+PImage cow, knife, knife2, tree, cereal, start;
 boolean gameInstr;
 boolean gameSelect;
 boolean gameStart;
@@ -32,6 +32,7 @@ void setup() {
   knife2 = loadImage("knife2.png");
   tree = loadImage("tree.png");
   cereal = loadImage("cereal.png");
+  start = loadImage("start.png");
 
   // Preparation
   size (480, 720);
@@ -48,8 +49,9 @@ void setup() {
   }
 
   // Start Screen
-  background(0);
-  text("PRESS SPACE TO START", 10, 100);
+  image(start, 0, 0);
+  textSize(35);
+  text("PRESS SPACE TO START", 65, 70);
 
   // // Mooing
   // introMoo = new SoundFile(this, "cow.wav");
