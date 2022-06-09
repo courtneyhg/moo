@@ -36,6 +36,7 @@ void setup() {
 
   // Preparation
   size (480, 720);
+  gameInstr = false;
   gameStart = false;
   envs[0] = new Grass();
   envs[1] = new Road();
@@ -50,8 +51,8 @@ void setup() {
 
   // Start Screen
   image(start, 0, 0);
-  textSize(35);
-  text("PRESS SPACE TO START", 65, 70);
+  textSize(27);
+  text("PRESS SPACE TO READ INSTRUCTIONS", 25, 50);
 
   // // Mooing
   // introMoo = new SoundFile(this, "cow.wav");
@@ -133,13 +134,25 @@ void keyPressed() {
 void draw() {
   
   // Instruction Screen
-  if (gameInstr || !gameSelect) {
-    // TO BE IMPLEMENTED
-  }
+  if (gameInstr) {
+    background(105, 206, 236);
+    image(cow, 0, 450);
+    cow.resize(170, 190);
+    fill(255);
+    textSize(50);
+    text("HOW TO PLAY:", 80, 100); 
+    fill(236, 233, 216);
+    rect(60, 180, 360, 240);
+    String s = "Use WASD to move the cow (W - Up, A - Left, S - Down, D - Right). Avoid knives and trees. Get on the cereal to avoid drowning in the milk river. Good luck!";
+    fill(0);
+    textSize(24);
+    text(s, 70, 205, 350, 240);
+    text("PRESS SPACE TO CONTINUE", 170, 550);
+ }
 
   // Character Selection Screen // We'll do this is time allows
-  if (gameSelect || !gameStart) {
-    // TO BE IMPLEMENTED
+  if (gameSelect) {
+    background(105, 206, 236);
   }
   
   if (gameStart) {
