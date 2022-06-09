@@ -186,8 +186,6 @@ void draw() {
 
   }
 
-  System.out.println(checkDeath());
-
   if (duck.isDead() || checkDeath()) {
     background(0);
     text("GAME OVER", 10, 100);
@@ -197,6 +195,7 @@ void draw() {
 
 }
 
+// true if duck is NOT on a tree
 boolean checkMove() {
   boolean canMove = true;
   for (Entity ent : allEnt) {
@@ -207,26 +206,29 @@ boolean checkMove() {
   return canMove;
 }
 
- boolean checkDeath() {
-   boolean death = false;
-   for (Entity ent : allEnt){
-     if (ent.getType() == 1 && ent.knifeHere(duck)) {
+// true if duck is on a knife
+boolean checkDeath() {
+  boolean death = false;
+  for (Entity ent : allEnt){
+    if (ent.getType() == 1 && ent.knifeHere(duck)) {
       death = true;
     }
-   }
-   return death;
- }
+  }
+  return death;
+}
 
- boolean checkJump(){
-   boolean canJump = false;
-   for (Entity ent : allEnt) {
+// true is duck is on a cereal
+boolean checkJump(){
+  boolean canJump = false;
+  for (Entity ent : allEnt) {
     if (ent.getType() == 2 && ent.isHere(duck)) {
       canJump = true;
     }
   }
   return canJump;
- }
+}
 
+// Update Points
 void updatePts() {
   if (netPts > pts) {
     pts = netPts;

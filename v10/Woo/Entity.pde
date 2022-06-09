@@ -53,6 +53,7 @@ public class Entity {
     return (x == e.getX() && y == e.getY());
   }
 
+  // true if entity is within range (2) of knife
   public boolean knifeHere(Entity e) {
     if (y == e.getY()){
       if (x > e.getX() && x - e.getX() <= 2){
@@ -61,13 +62,8 @@ public class Entity {
       if (x < e.getX() && e.getX() - x <= 2){
         return true;
       }
-      else{
-        return false;
-      }
     }
-    else{
-      return false;
-    }
+    return false;
   }
 
   // Nature
