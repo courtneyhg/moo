@@ -133,5 +133,6 @@ Courtney :: mostly fixed trees, added scoring, realized processing uses random()
 --------------------------------------------------------------
 Fang :: Added on-screen pts display, added move limits (is tree is in the path) to cleaned code
 Bri :: 
-Courtney :: 
+Courtney :: fixed the game over pg, fixed death for when duck is off screen or gets hit with a knife
+            (the knife will have to be fixed it doesnt work for some test cases)
 ==============================================================

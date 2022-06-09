@@ -169,10 +169,12 @@ void draw() {
 
   }
 
-  if (duck.isDead()) {
+  System.out.println(checkDeath());
+
+  if (duck.isDead() || checkDeath()) {
     background(0);
     text("GAME OVER", 10, 100);
-    text("Score: " + pts, 100, 100);
+    text("Score: " + pts, 10, 200);
     noLoop();
   }
 
@@ -188,9 +190,15 @@ boolean checkMove() {
   return canMove;
 }
 
-// checkDeath() {
-
-// }
+ boolean checkDeath() {
+   boolean death = false;
+   for (Entity ent : allEnt){
+     if (ent.getType() == 1 && ent.isHere(duck)) {
+      death = true;
+    }
+   }
+   return death;
+ }
 
 void updatePts() {
   if (netPts > pts) {
