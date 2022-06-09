@@ -193,7 +193,7 @@ boolean checkMove() {
  boolean checkDeath() {
    boolean death = false;
    for (Entity ent : allEnt){
-     if (ent.getType() == 1 && ent.isHere(duck)) {
+     if (ent.getType() == 1 && ent.knifeHere(duck)) {
       death = true;
     }
    }

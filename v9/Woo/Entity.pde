@@ -53,6 +53,23 @@ public class Entity {
     return (x == e.getX() && y == e.getY());
   }
 
+  public boolean knifeHere(Entity e) {
+    if (y == e.getY()){
+      if (x > e.getX() && x - e.getX() <= 2){
+        return true;
+      }
+      if (x < e.getX() && e.getX() - x <= 2){
+        return true;
+      }
+      else{
+        return false;
+      }
+    }
+    else{
+      return false;
+    }
+  }
+
   // Nature
   public void move() {
     x = x + dx;
