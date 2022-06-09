@@ -139,7 +139,7 @@ Courtney :: fixed the game over pg, fixed death for when duck is off screen or g
 
 2022-06-09
 --------------------------------------------------------------
-Fang :: 
+Fang :: Different direction knives, started v11
 Bri :: 
 Courtney :: made v10 and started added the milk and cereal
 ==============================================================
