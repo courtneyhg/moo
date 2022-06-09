@@ -43,6 +43,7 @@ void setup() {
 
   // Start Screen
   background(0);
+  text("PRESS SPACE TO START", 10, 100);
 
   // // Mooing
   // introMoo = new SoundFile(this, "cow.wav");
