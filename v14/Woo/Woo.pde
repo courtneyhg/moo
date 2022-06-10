@@ -1,9 +1,9 @@
 // Setup Variables
-// import processing.sound.*;
+import processing.sound.*;
 PImage cow, pig, chicken, goat, smurf, donkey, knife, knife2, tree, cereal, chosenCharacter;
 PImage start, end;
 boolean gameInstr, gameSelect, gameStart;
-// SoundFile introMoo;
+SoundFile introMoo;
 
 // Environment Variables
 int shiftY;
@@ -43,6 +43,11 @@ void setup(){
   cereal = loadImage("cereal.png");
   start = loadImage("start.png");
   end = loadImage("death.png");
+
+  // Load sound files
+  introMoo = new SoundFile(this, "cow.wav");
+  introMoo.play();
+  introMoo.amp(.5);
 
   newStart();
 
