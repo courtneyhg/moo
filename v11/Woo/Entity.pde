@@ -53,14 +53,6 @@ public class Entity {
     return (x == e.getX() && y == e.getY());
   }
 
-  public boolean milkHere(Entity e) {
-    return (x != e.getX() && y == e.getY());
-  }
-
-  public boolean jumpable() {
-    return (x % 60 == 0);
-  }
-
   // true if entity is within range (10) of knife
   public boolean knifeHere(Entity e) {
     if (y == e.getY()){
