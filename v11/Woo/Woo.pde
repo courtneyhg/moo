@@ -23,8 +23,13 @@ int netPts = 0;
 
 
 /************************ CROSS ROAD ***************************/
+void setup(){
+  size(480, 720);
+  newStart();
+}
 
-void setup() {
+
+void newStart() {
   
   // Load PNGs
   cow = loadImage("cow.png");
@@ -89,9 +94,15 @@ void keyPressed() {
     }
 
     // Cannot move if there is no cereal (doesnt work yet)
-    if (!checkJump()) {
-      duck.moveY(duckV);
-      return;
+    if (jumpPer()){
+      if (!checkJump()){
+        duck.moveY(duckV);
+        return;
+      }
+      else {
+        duck.moveY(-duckV);
+        duck.moveX(1);
+      }
     }
 
     netPts = netPts + 1;
@@ -192,21 +203,27 @@ void draw() {
     if (keyPressed) {
       if (key == '1') {
         chosenCharacter = cow;
+        gameStart = true;
       }
       if (key == '2') {
         chosenCharacter = pig;
+        gameStart = true;
       }
       if (key == '3') {
         chosenCharacter = smurf;
+        gameStart = true;
       }
       if (key == '4') {
         chosenCharacter = donkey;
+        gameStart = true;
       }
       if (key == '5') {
         chosenCharacter = chicken;
+        gameStart = true;
       }
       if (key == '6') {
         chosenCharacter = goat;
+        gameStart = true;
       }
     }
  }
@@ -290,7 +307,9 @@ void draw() {
     background(0);
     text("GAME OVER", 10, 100);
     text("Score: " + pts, 10, 200);
-    noLoop();
+    if (keyPressed){
+      newStart();
+    }
   }
 
 }
@@ -328,10 +347,10 @@ boolean checkJump(){
   return canJump;
 }
 
-boolean jumpable(){
+boolean jumpPer(){
   boolean hopCereal = false;
   for (Entity ent : allEnt) {
-    if (ent.getType() == 3 && ent.isHere(duck)) {
+    if (ent.getType() == 3 && ent.jumpable()) {
       hopCereal = true;
     }
   }
