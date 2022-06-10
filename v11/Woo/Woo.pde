@@ -1,6 +1,6 @@
 // Setup Variables
 // import processing.sound.*;
-PImage cow, knife, knife2, tree, cereal, start;
+PImage cow, pig, chicken, goat, smurf, donkey, knife, knife2, tree, cereal, start, chosenCharacter;
 boolean gameInstr;
 boolean gameSelect;
 boolean gameStart;
@@ -28,6 +28,11 @@ void setup() {
   
   // Load PNGs
   cow = loadImage("cow.png");
+  pig = loadImage("pig.png");
+  chicken = loadImage("chiken.png"); 
+  goat = loadImage("goat.png");
+  smurf = loadImage("smurf.png");
+  donkey = loadImage("donkey.png");
   knife = loadImage("knife.png");
   knife2 = loadImage("knife2.png");
   tree = loadImage("tree.png");
@@ -140,12 +145,14 @@ void draw() {
     cow.resize(170, 190);
     fill(255);
     textSize(50);
-    text("HOW TO PLAY:", 80, 100); 
+    text("HOW TO PLAY:", 80, 100);
+  // Creating Rectangle
     fill(236, 233, 216);
     rect(60, 180, 360, 240);
     String s = "Use WASD to move the cow (W - Up, A - Left, S - Down, D - Right). Avoid knives and trees. Get on the cereal to avoid drowning in the milk river. Good luck!";
     fill(0);
     textSize(24);
+  // Shaping Text To Fit Rectangle
     text(s, 70, 205, 350, 240);
     text("PRESS SPACE TO CONTINUE", 170, 550);
  }
@@ -153,7 +160,56 @@ void draw() {
   // Character Selection Screen // We'll do this is time allows
   if (gameSelect) {
     background(105, 206, 236);
-  }
+    textSize(45);
+    fill(255);
+  // Creating Title Text
+    text("Choose your character:", 23, 60);
+    textSize(30);
+  // Creating Cow
+    image(cow, 10, 70);
+    text("[1]", 79, 280);
+  // Creating Pig
+    image(pig, 280, 80);
+    pig.resize(170, 170);
+    text("[2]", 360, 280);
+  // Creating Smurf
+    image(smurf, -30, 290);
+    smurf.resize(290, 210);
+    text("[3]", 90, 513);
+  // Creating Donkey
+    image(donkey, 280, 280);
+    donkey.resize(160, 200);
+    text("[4]", 350, 510);
+  // Creating Chicken
+    image(chicken, 50, 530);
+    chicken.resize(140, 160);
+    text("[5]", 150, 690);
+  // Creating Goat
+    image(goat, 250, 520);
+    goat.resize(180, 170);
+    text("[6]", 410, 690);
+    
+    if (keyPressed) {
+      if (key == '1') {
+        chosenCharacter = cow;
+      }
+      if (key == '2') {
+        chosenCharacter = pig;
+      }
+      if (key == '3') {
+        chosenCharacter = smurf;
+      }
+      if (key == '4') {
+        chosenCharacter = donkey;
+      }
+      if (key == '5') {
+        chosenCharacter = chicken;
+      }
+      if (key == '6') {
+        chosenCharacter = goat;
+      }
+    }
+ }
   
   if (gameStart) {
 
@@ -217,7 +273,7 @@ void draw() {
     }
 
     // Draw Cow
-    image(cow, duck.getX(), duck.getY(), 60, 60);
+    image(chosenCharacter, duck.getX(), duck.getY(), 60, 60);
 
     // Display Score
     fill(255);
