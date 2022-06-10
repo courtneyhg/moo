@@ -156,7 +156,7 @@ Courtney :: fixed the game over pg, fixed death for when duck is off screen or g
 --------------------------------------------------------------
 Fang :: Different direction knives, fixed knife range, Milk kills, tide kills, only Bottom Border Kills, duck 
 now moves with Cereal, Being on Cereal helps avoid milk, different Cereal speeds and directions, end screen 
-beautified, implemented position adjustment when aboarding and leaving cereal, COMPLETION
+beautified, implemented position adjustment when aboarding and leaving cereal, even more updated UML, COMPLETION
 Bri :: Added character selection, introduction and instruction screens, updated README and UML diagram
 Courtney :: made v10 and added the milk and cereal
 ==============================================================
