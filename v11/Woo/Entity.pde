@@ -53,13 +53,21 @@ public class Entity {
     return (x == e.getX() && y == e.getY());
   }
 
-  // true if entity is within range (2) of knife
+  public boolean milkHere(Entity e) {
+    return (x != e.getX() && y == e.getY());
+  }
+
+  public boolean jumpable() {
+    return (x % 60 == 0);
+  }
+
+  // true if entity is within range (10) of knife
   public boolean knifeHere(Entity e) {
     if (y == e.getY()){
-      if (x > e.getX() && x - e.getX() <= 2){
+      if (x > e.getX() && x - e.getX() <= 10){
         return true;
       }
-      if (x < e.getX() && e.getX() - x <= 2){
+      if (x < e.getX() && e.getX() - x <= 10){
         return true;
       }
     }

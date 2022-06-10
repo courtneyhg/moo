@@ -89,7 +89,7 @@ void keyPressed() {
     }
 
     // Cannot move if there is no cereal (doesnt work yet)
-    if (checkJump()) {
+    if (!checkJump()) {
       duck.moveY(duckV);
       return;
     }
@@ -281,6 +281,10 @@ void draw() {
     text(pts, 20, 60);
 
   }
+  
+  if (checkJump()){
+    System.out.println("1");
+  }
 
   if (duck.isDead() || checkDeath()) {
     background(0);
@@ -315,13 +319,23 @@ boolean checkDeath() {
 
 // true is duck is on a cereal
 boolean checkJump(){
-  boolean canJump = false;
+  boolean canJump = true;
   for (Entity ent : allEnt) {
-    if (ent.getType() == 3 && ent.isHere(duck)) {
-      canJump = true;
+    if (ent.getType() == 3 && ent.milkHere(duck)) {
+      canJump = false;
     }
   }
   return canJump;
+}
+
+boolean jumpable(){
+  boolean hopCereal = false;
+  for (Entity ent : allEnt) {
+    if (ent.getType() == 3 && ent.isHere(duck)) {
+      hopCereal = true;
+    }
+  }
+  return hopCereal;
 }
 
 // Update Points
