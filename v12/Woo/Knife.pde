@@ -2,18 +2,17 @@ public class Knife extends Entity {
 
   public Knife(int xPos, int yPos) {
     super(xPos, yPos);
-    type = 1;
-    //dx = 2;
-    dx = -((int)random(0, 3) + 1);
+    // undefined dx and type
   }
 
-  public Knife(int xPos, int yPos, boolean rightFacing) {
-    super(xPos, yPos);
-    type = 2;
-    //dx = 2;
-    dx = ((int)random(0, 3) + 1);
+  public Knife(int xPos, int yPos, int newDx) {
+    this(xPos, yPos);
+    dx = newDx;
+    if (dx < 0) {
+      type = 1;
+    } else {
+      type = 2;
+    }
   }
-
-
 
 }

@@ -7,11 +7,4 @@ public class Cereal extends Entity {
     //dx = (int)random(0, 3) + 1;
   }
 
-  // true if e is on milk
-  public boolean milkHere(Entity e) {
-    return (x != e.getX() && y == e.getY());
-  }
-
-
-
 }

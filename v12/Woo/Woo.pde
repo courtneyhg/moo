@@ -1,9 +1,9 @@
 // Setup Variables
 // import processing.sound.*;
-PImage cow, pig, chicken, goat, smurf, donkey, knife, knife2, tree, cereal, start, chosenCharacter;
-boolean gameInstr;
-boolean gameSelect;
-boolean gameStart;
+PImage cow, pig, chicken, goat, smurf, donkey, knife, knife2, tree, cereal, chosenCharacter;
+PImage start, end;
+boolean gameInstr, gameSelect, gameStart;
+int randomX, randomDx;
 // SoundFile introMoo;
 
 // Environment Variables
@@ -20,7 +20,6 @@ ArrayList<Entity> allEnt;
 // Points
 int pts;
 int netPts;
-
 
 /************************ CROSSY ROAD ***************************/
 void setup(){
@@ -44,6 +43,7 @@ void setup(){
   tree = loadImage("tree.png");
   cereal = loadImage("cereal.png");
   start = loadImage("start.png");
+  end = loadImage("death.png");
 
   newStart();
 
@@ -245,6 +245,7 @@ void draw() {
     }
   }
   
+  // Game Screen
   if (gameStart) {
 
     checkDeath();
@@ -264,16 +265,21 @@ void draw() {
         allEnt.add(new Tree(int(random(8)) * 60, -61));
       }
       if (currEnv == 1) {
-        allEnt.add(new Knife(int(random(480)), -61));
-        allEnt.add(new Knife(int(random(480)), -61));
+        randomX = int(random(480));
+        randomDx = int(random(1, 3));
+        allEnt.add(new Knife(randomX, -61, -randomDx));
+        allEnt.add(new Knife(randomX + (int(random(8)) * 60), -61, -randomDx));
       }
       if (currEnv == 2) {
-        allEnt.add(new Knife(int(random(480)), -61, true));
-        allEnt.add(new Knife(int(random(480)), -61, true));
+        randomX = int(random(480));
+        randomDx = int(random(3)) + 1;
+        allEnt.add(new Knife(randomX, -61, randomDx));
+        allEnt.add(new Knife(randomX + (int(random(8)) * 60), -61, randomDx));
       }
       if (currEnv == 3 ) {
-        allEnt.add(new Cereal(int(random(480)), -61));
-        allEnt.add(new Cereal(int(random(480)), -61));
+        randomX = int(random(480));
+        allEnt.add(new Cereal(randomX, -61));
+        allEnt.add(new Cereal(randomX + (int(random(1, 7)) * 60), -61));
       }
 
       shiftY = 0;
@@ -320,10 +326,12 @@ void draw() {
 
   if (duck.isDead()) {
     background(0);
+    image(end, 60, 120);
+    end.resize(400, 400);
     textSize(24);
-    text("GAME OVER", 10, 100);
-    text("Score: " + pts, 10, 200);
-    text("PRESS R TO RESTART", 170, 550);
+    text("GAME OVER", 30, 100);
+    text("Score: " + pts, 30, 150);
+    text("PRESS R TO RESTART", 230, 600);
   }
 
 }
@@ -348,11 +356,24 @@ boolean checkMove() {
 // true if duck is on a knife
 void checkDeath() {
   boolean death = false;
+  boolean onCereal = false;
+  boolean onMilkEnv = false;
+
   for (Entity ent : allEnt){
-    if ((ent.getType() == 1 || ent.getType() == 2) && ent.knifeHere(duck)) {
+    // Knife Death
+    if ((ent.getType() == 1 || ent.getType() == 2) && ent.inRange(duck)) {
       death = true;
     }
+    // Milk Death
+    if (ent.getType() == 3 && ent.getY() == duck.getY()) {
+      onMilkEnv = true;
+      onCereal = onCereal || ent.inRange(duck);
+    } // onCereal: true when duck is on land or Cereal, false when duck is in Milk
   }
+  if (onMilkEnv && !onCereal) {
+    death = true;
+  }
+
   if (duck.getY() > height) {
     death = true;
   }
