@@ -132,7 +132,7 @@ Courtney :: mostly fixed trees, added scoring, realized processing uses random()
 2022-06-08
 --------------------------------------------------------------
 Fang :: Added on-screen pts display, added move limits (is tree is in the path) to cleaned code
-Bri :: 
+Bri ::
 Courtney :: fixed the game over pg, fixed death for when duck is off screen or gets hit with a knife
             (the knife will have to be fixed it doesnt work for some test cases)
 ==============================================================
@@ -140,6 +140,6 @@ Courtney :: fixed the game over pg, fixed death for when duck is off screen or g
 2022-06-09
 --------------------------------------------------------------
 Fang :: Different direction knives, started v11
-Bri :: 
+Bri :: Added character selection, introduction and instruction screens, updated README and UML diagram
 Courtney :: made v10 and started added the milk and cereal
 ==============================================================
