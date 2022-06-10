@@ -3,7 +3,6 @@
 PImage cow, pig, chicken, goat, smurf, donkey, knife, knife2, tree, cereal, chosenCharacter;
 PImage start, end;
 boolean gameInstr, gameSelect, gameStart;
-int randomX, randomDx;
 // SoundFile introMoo;
 
 // Environment Variables
@@ -251,6 +250,7 @@ void draw() {
     checkDeath();
 
     if (shiftY == 59) {
+      int randomX, randomDx; // temp data storage
       currEnv = int(random(4));    
       allEnv.remove(0);
       allEnv.add(envs[currEnv]);

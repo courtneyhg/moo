@@ -15,10 +15,6 @@ public class Duck extends Entity {
     return isOnCereal;
   }
 
-  public boolean isDead() {
-    return !alive;
-  }
-
   public int getCerealDx() {
     return cerealDx;
   }

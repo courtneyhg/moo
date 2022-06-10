@@ -4,7 +4,7 @@ Courtney Huang
 Brianna Tieu
 pd 06
 ---------------------
-CrossyRoad [Name tba]
+CrossyRoad - MOOOOO
 
 
 /////////// Zone of Reflection \\\\\\\\\\\
@@ -14,22 +14,37 @@ OBSTACLES OVERCOME
 wow we so BOSS bc...
 - figured out how to move the Environment (naming conflicts and issues with instance variables)
   and used the System.out.println in the console to debug
+- did random generation of environments and entities
+- made poisonous milk and neutralizing cereal
+- the start screen is dope
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- Clean up superclasses and subclasses
+- Now how do we make 3D...
+- Smoother movements with higher framerates?
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow! oo!...
+Processing is super neat and not so neat in many areas.
+- Importing images was really convenient
+- Learned to use draw() to make some cool shifting happen
+- Shifting was still manual for us, we couldn't get translate to work without
+drawing seven million cows that shadow each other.
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-we changed ___ to ___ bc...
+Instead of having seven million new Environment objects, we opted for just references to 4 Environments
+because we got an outOfMemory error. Now, Environments are basically just colors codes.
+
+Midway, we decided to recode NEATER. We didn't have much at the time and it would just make the rest 
+of the project and teamwork more efficient if we added comments to everything and organized our methods
+and instance variables. VERY good plan that worked great.
+
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-tales of wisdom gained...
+Teamwork makes the dream work!
+
 
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
  ______   ______   __   __   __       ______   _______
@@ -139,7 +154,9 @@ Courtney :: fixed the game over pg, fixed death for when duck is off screen or g
 
 2022-06-09
 --------------------------------------------------------------
-Fang :: Different direction knives, started v11
+Fang :: Different direction knives, fixed knife range, Milk kills, tide kills, only Bottom Border Kills, duck 
+now moves with Cereal, Being on Cereal helps avoid milk, different Cereal speeds and directions, end screen 
+beautified, implemented position adjustment when aboarding and leaving cereal, COMPLETION
 Bri :: Added character selection, introduction and instruction screens, updated README and UML diagram
-Courtney :: made v10 and started added the milk and cereal
+Courtney :: made v10 and added the milk and cereal
 ==============================================================
