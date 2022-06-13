@@ -279,7 +279,7 @@ void draw() {
       if (currEnv == 3 ) {
         randomX = int(random(480));
         randomDx = int(random(3)) + 1;
-        if (int(random(1)) == 0) {
+        if (int(random(2)) == 0) {
           randomDx = randomDx * -1;
         }
         allEnt.add(new Cereal(randomX, -61, randomDx));
