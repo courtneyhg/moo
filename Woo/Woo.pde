@@ -335,6 +335,7 @@ void draw() {
   }
 
   if (duck.isDead()) {
+    gameStart = false;
     background(0);
     image(end, 60, 120);
     end.resize(400, 400);
