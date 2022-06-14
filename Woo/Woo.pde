@@ -371,7 +371,6 @@ boolean checkMove() {
   // Officially offCereal
   if (wasOnCereal && !duck.onCereal()) { // Reposition to 8 by 12 grid
       duck.setX(round((float) currX / 60) * 60);
-    }
   }
 
   // Borders
