@@ -83,7 +83,7 @@ void newStart() {
 }
 
 void keyPressed() {
-  
+
   // To Start
   if (key == ' ') {
     if (!gameInstr) {
@@ -100,58 +100,60 @@ void keyPressed() {
     newStart();
     redraw();
   }
-  
-  // Move Up
-  if (key == 'W' || key == 'w'){
-    duck.moveY(-duckV);
+    
+  if (gameStart) {
 
-    // Cannot move if a Tree is in the path
-    if (!checkMove()) {
-      duck.moveY(duckV);
-      return;
-    }
-
-    netPts = netPts + 1;
-    updatePts();
-  }
-  
-  // Move Down
-  if (key == 'S' || key == 's'){
-    duck.moveY(duckV);
-
-    // Cannot move if a Tree is in the path
-    if (!checkMove()) {
+    // Move Up
+    if (key == 'W' || key == 'w'){
       duck.moveY(-duckV);
-      return;
+
+      // Cannot move if a Tree is in the path
+      if (!checkMove()) {
+        duck.moveY(duckV);
+        return;
+      }
+
+      netPts = netPts + 1;
+      updatePts();
+    }
+    
+    // Move Down
+    if (key == 'S' || key == 's'){
+      duck.moveY(duckV);
+
+      // Cannot move if a Tree is in the path
+      if (!checkMove()) {
+        duck.moveY(-duckV);
+        return;
+      }
+
+      netPts = netPts - 1;
+      updatePts();
     }
 
-    netPts = netPts - 1;
-    updatePts();
-  }
-
-  // Move Left
-  if (key == 'A' || key == 'a'){
-    duck.moveX(-duckV);
-
-    // Cannot move if a Tree is in the path
-    if (!checkMove()) {
-      duck.moveX(duckV);
-      return;
-    }
-  }
-
-  // Move Right
-  if (key == 'D' || key == 'd'){
-    duck.moveX(duckV);
-
-    // Cannot move if a Tree is in the path
-    if (!checkMove()) {
+    // Move Left
+    if (key == 'A' || key == 'a'){
       duck.moveX(-duckV);
-      return;
+
+      // Cannot move if a Tree is in the path
+      if (!checkMove()) {
+        duck.moveX(duckV);
+        return;
+      }
     }
+
+    // Move Right
+    if (key == 'D' || key == 'd'){
+      duck.moveX(duckV);
+
+      // Cannot move if a Tree is in the path
+      if (!checkMove()) {
+        duck.moveX(-duckV);
+        return;
+      }
+    }
+
   }
-
-
 
 }
 
@@ -348,6 +350,7 @@ void draw() {
 boolean checkMove() {
   boolean canMove = true;
   boolean wasOnCereal = duck.onCereal();
+  int currX = duck.getX();
   duck.offCereal();
 
   for (Entity ent : allEnt) {
@@ -367,7 +370,8 @@ boolean checkMove() {
 
   // Officially offCereal
   if (wasOnCereal && !duck.onCereal()) { // Reposition to 8 by 12 grid
-    duck.setX(round((float) duck.getX() / 60) * 60);
+      duck.setX(round((float) currX / 60) * 60);
+    }
   }
 
   // Borders
